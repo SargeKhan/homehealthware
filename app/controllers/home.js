@@ -91,6 +91,7 @@ exports.createUser = function (req, res) {
                         user1.save(function (err, user2) {
                             console.log("Before deleteing: \n"+  user2);
                             delete user2.hashed_password;
+                            d
                             delete user2.token;
                             delete user2.v;
                             console.log("Before deleteing: \n"+ user2);
