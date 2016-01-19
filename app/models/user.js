@@ -1,4 +1,3 @@
-
 /*!
  * Module dependencies
  */
@@ -23,38 +22,15 @@ var UserSchema = new Schema({
   city: { type: String, null: false},   /*"somewhere",*/
   state: { type: String, null: false},  /* "illinois",*/
   zip: {type: Number, null: false },    /*"60234",*/
-  role: {type: Number, null:false}, /* this will be defined in a different table the numer here will go to a specific permission set */
+  role: {type: Number, null: false}, /* this will be defined in a different table the numer here will go to a specific permission set */
   co_id: {type: Schema.Types.ObjectId, null:true}, /* the company they are associated with */
-  hashed_password: { type: String, null:false},
-  salt: { type: String, default: '' }
+  token: {type:String, null: false, select: false},
+  hashed_password: { type: Schema.Types.Mixed, null:false, trim:false, select: false}
 });
 
 /**
  * hook a pre save method to hash the password
  */
-
-UserSchema.pre('save', function(next) {
-  console.log("password: " + this.password );
-  if (!this.isModified('password')) return next()
-  if (this.password && this.password.length > 6) {
-    var password = this.password;
-    console.log("User password is okay");
-    bcrypt.hash(password, 10, function (err, hash) {
-      if (err) {
-        var err = new Error("Error hashing password.");
-        next(err);
-      } else {
-        this.hashed_password = hash;
-        console.log(hash);
-        bcrypt.compare(password, this.hashed_password, function (err, result) {
-          console.log("Checking hash and password. Result is: " + result);
-          console.log("Checking hash and password. Error is: " + err);
-          next();
-        });
-      }
-    });
-  }
-});
 
 /**
  * user plugin

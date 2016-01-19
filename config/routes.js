@@ -5,6 +5,7 @@
 
 var mongoose = require('mongoose');
 var home = require('../app/controllers/home');
+var authenticate = require('./token-auth/index')
 
 /**
  * Expose
@@ -15,9 +16,10 @@ module.exports = function (app, passport) {
   app.get('/', home.index);
   app.get('/success', home.index);
   app.get('/failure', home.index);
-  app.get('/createUser', home.createUser);
+  app.post('/createUser', home.createUser);
   app.get('/createCompany',home.createCompany);
-  app.post('/login', passport.authenticate('local') );
+  app.post('/login', home.login);
+  app.get('/requiresAuthenticaton', home.authenticateView)
 
   /**
    * Error handling

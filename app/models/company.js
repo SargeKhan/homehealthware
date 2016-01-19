@@ -22,7 +22,6 @@ var CompanySchema = new Schema({
     phone1:{type: Number, null: false }, //"7083962345",
     phone2:{type: Number, null: true }, //"7087552345",
     owner:{ type: String, null: false} //"Ralph Ditchie"
-
 });
 
 /**
