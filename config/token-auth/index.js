@@ -6,7 +6,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
-console.log("read token-auth");
 function checkHeader(req) {
     var bearerToken;
     var bearerHeader = req.headers["authorization"];
@@ -14,13 +13,22 @@ function checkHeader(req) {
         var bearer = bearerHeader.split(" ");
         bearerToken = bearer[1];
         req.token = bearerToken;
+        return req;
     } else {
         return null;
     }
 };
 
 exports.ensureAuthentication = function(req, res, next){
+    console.log("Value of req before" + req);
     req = checkHeader(req);
+    console.log("Value of req" + req);
+    if(req == null){
+        return res.status(403).send({
+            type: false,
+            data: "Error occured: Token not set"
+        })
+    }
     User.findOne({token: req.token}, function(err, user) {
         if (err) {
             res.json({

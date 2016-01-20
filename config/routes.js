@@ -19,7 +19,7 @@ module.exports = function (app, passport) {
   app.post('/createUser', home.createUser);
   app.get('/createCompany',home.createCompany);
   app.post('/login', home.login);
-  app.get('/requiresAuthenticaton', home.authenticateView)
+  app.get('/requiresAuthenticaton', authenticate.ensureAuthentication, home.authenticateView)
 
   /**
    * Error handling

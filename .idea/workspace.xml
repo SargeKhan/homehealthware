@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06e29efb-79b2-4eda-8c57-9028bec0e82d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home.js" afterPath="$PROJECT_DIR$/app/controllers/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/token-auth/index.js" afterPath="$PROJECT_DIR$/config/token-auth/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.js" afterPath="$PROJECT_DIR$/config/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="node-express-mongoose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59504133" vertical-offset="1314" max-vertical-offset="3690">
-              <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3186" max-vertical-offset="3672">
+              <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,17 +52,17 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/token-auth/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="738">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="882">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1224">
+            <state vertical-scroll-proportion="0.7346939" vertical-offset="198" max-vertical-offset="1224">
               <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -101,8 +104,8 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="954">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="954">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -148,7 +151,6 @@
         <option value="$PROJECT_DIR$/config/passport.js" />
         <option value="$PROJECT_DIR$/test/test_user.js" />
         <option value="$PROJECT_DIR$/test/test_company.js" />
-        <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/config/passport/local.js" />
         <option value="$PROJECT_DIR$/app/models/user.js" />
         <option value="$PROJECT_DIR$/config/passport.js" />
@@ -159,12 +161,13 @@
         <option value="$PROJECT_DIR$/config/token-auth/authenticate.js" />
         <option value="$PROJECT_DIR$/node_modules/jsonwebtoken/index.js" />
         <option value="$PROJECT_DIR$/config/express.js" />
-        <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/models/user.js" />
+        <option value="$PROJECT_DIR$/app/controllers/home.js" />
+        <option value="$PROJECT_DIR$/app/controllers/home.js" />
+        <option value="$PROJECT_DIR$/config/routes.js" />
+        <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/config/token-auth/index.js" />
-        <option value="$PROJECT_DIR$/app/controllers/home.js" />
-        <option value="$PROJECT_DIR$/app/controllers/home.js" />
       </list>
     </option>
   </component>
@@ -172,9 +175,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="x" value="-1" />
+    <option name="y" value="-4" />
+    <option name="width" value="1368" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -309,7 +313,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;user&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/user.js&#10;ho&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;h&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;rout&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;rou&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;route&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;hom&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;auth&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/authenticate.js&#10;loca&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;pas&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/helper_functions/password.js&#10;local&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/test/test_user.js&#10;compan&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/company.js&#10;pass&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/config/passport.js&#10;User&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js&#10;test_&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;test&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;pac&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/package.json&#10;com&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/company.js&#10;Use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js" />
+    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/user.js&#10;hom&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;inde&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/index.js&#10;home&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;ho&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;h&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;rout&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;rou&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;route&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;auth&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/authenticate.js&#10;loca&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;pas&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/helper_functions/password.js&#10;local&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/test/test_user.js&#10;compan&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/company.js&#10;pass&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/config/passport.js&#10;User&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js&#10;test_&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;test&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;pac&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/package.json&#10;com&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/company.js&#10;Use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.home.js">
@@ -389,27 +393,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23678333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33024693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33024693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -735,6 +739,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1062">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -753,13 +758,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="126">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
@@ -830,14 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="954">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="756">
@@ -846,29 +843,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="954">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/token-auth/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="738">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="882">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3186" max-vertical-offset="3672">
+          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+        <state vertical-scroll-proportion="0.7346939" vertical-offset="198" max-vertical-offset="1224">
           <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59504133" vertical-offset="1314" max-vertical-offset="3690">
-          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
