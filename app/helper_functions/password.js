@@ -9,10 +9,11 @@ exports.hashPassword = function(password, cb) {
     bcrypt.hash(password, 10, function (err, hash) {
         if (err) {
             var err = new Error("Error hashing password.");
-            next(err);
+            console.log(err);
+            cb(null);
         } else {
             console.log(hash);
-            cb(hash)
+            cb(hash);
         }
     });
 };
