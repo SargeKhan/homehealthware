@@ -28,14 +28,6 @@ var env = process.env.NODE_ENV || 'development';
 
 module.exports = function (app) {
 
-  // Compression middleware (should be placed before express.static)
-  app.use(compression({
-    threshold: 512
-  }));
-
-  // Static files middleware
-  app.use(express.static(config.root + '/public'));
-
   // Use winston on production
   var log;
   if (env !== 'development') {
@@ -54,9 +46,6 @@ module.exports = function (app) {
   // Logging middleware
   if (env !== 'test') app.use(morgan(log));
 
-  // set views path and default layout
-  app.set('views', config.root + '/app/views');
-  app.set('view engine', 'jade');
 
   // expose package.json to views
   app.use(function (req, res, next) {

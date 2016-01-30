@@ -3,7 +3,6 @@
  * Module dependencies.
  */
 
-var mongoose = require('mongoose');
 var home = require('../app/controllers/home');
 var authenticate = require('./token-auth/index')
 
@@ -11,8 +10,7 @@ var authenticate = require('./token-auth/index')
  * Expose
  */
 
-module.exports = function (app, passport) {
-
+module.exports = function (app) {
   app.get('/', home.index);
   app.get('/success', home.index);
   app.get('/failure', home.index);
@@ -33,16 +31,18 @@ module.exports = function (app, passport) {
       || (~err.message.indexOf('Cast to ObjectId failed')))) {
       return next();
     }
+
     console.error(err.stack);
     // error page
     res.status(500).send( { type: false, error: err.stack });
   });
 
   // assume 404 since no middleware responded
-  app.use(function (req, res, next) {
+  app.use(function (req, res) {
     res.status(404).send({
       type: false,
-      error: 'Not found' + url + req.originalUrl
+      error: 'Not found' + req.originalUrl
     });
   });
+
 };
