@@ -15,26 +15,28 @@ exports.index = function (req, res) {
   });
 };
 exports.login = function(req, res) {
-    User.findOne({email: req.body.email, password: req.body.password}, '+hashed_password',function(err, user) {
-        if (err) {
-            res.json({
-                type: false,
-                data: "Error occured: " + err
-            });
-        } else {
-            if (user) {
-                res.json({
-                    type: true,
-                    data: user,
-                    token: user.token
-                });
-            } else {
+    helper.hashPassword(req.body.password, function(hashedPassword){
+        User.findOne({email: req.body.email, password: hashedPassword}, '+hashed_password',function(err, user) {
+            if (err) {
                 res.json({
                     type: false,
-                    data: "Incorrect email/password"
+                    data: "Error occured: " + err
                 });
+            } else {
+                if (user) {
+                    res.json({
+                        type: true,
+                        data: user,
+                        token: user.token
+                    });
+                } else {
+                    res.json({
+                        type: false,
+                        data: "Incorrect email/password"
+                    });
+                }
             }
-        }
+        });
     });
 };
 

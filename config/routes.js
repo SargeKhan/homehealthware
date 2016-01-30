@@ -20,6 +20,7 @@ module.exports = function (app, passport) {
   app.get('/createCompany',home.createCompany);
   app.post('/login', home.login);
   app.get('/requiresAuthenticaton', authenticate.ensureAuthentication, home.authenticateView)
+  app.get('/authenticated', authenticate.ensureAuthentication, home.authenticateView)
 
   /**
    * Error handling
@@ -34,14 +35,14 @@ module.exports = function (app, passport) {
     }
     console.error(err.stack);
     // error page
-    res.status(500).render('500', { error: err.stack });
+    res.status(500).send( { type: false, error: err.stack });
   });
 
   // assume 404 since no middleware responded
   app.use(function (req, res, next) {
-    res.status(404).render('404', {
-      url: req.originalUrl,
-      error: 'Not found'
+    res.status(404).send({
+      type: false,
+      error: 'Not found' + url + req.originalUrl
     });
   });
 };
