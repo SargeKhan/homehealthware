@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 var config = require('../../config/config.js');
+var bcrypt = require("bcrypt");
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var Company = mongoose.model('Company');
@@ -15,8 +16,11 @@ exports.index = function (req, res) {
   });
 };
 exports.login = function(req, res) {
+
+    console.log("Password recvd while login user:" + req.body.password);
     helper.hashPassword(req.body.password, function(hashedPassword){
-        User.findOne({email: req.body.email, password: hashedPassword}, '+hashed_password',function(err, user) {
+        console.log("Hashed password in Login" + hashedPassword);
+        User.findOne({email: req.body.email}, '+hashed_password',function(err, user) {
             if (err) {
                 res.json({
                     type: false,
@@ -24,15 +28,29 @@ exports.login = function(req, res) {
                 });
             } else {
                 if (user) {
-                    res.json({
-                        type: true,
-                        data: user,
-                        token: user.token
+                    bcrypt.compare(req.body.password, user.hashed_password, function(err,result) {
+                        console.log("Bycrpt returns: " + result);
+                        if(err){
+                            res.status(501).send();
+                        }else{
+                            if(result) {
+                                res.json({
+                                    type: true,
+                                    data: user,
+                                    token: user.token
+                                });
+                            }else{
+                                res.status(401).send({
+                                    type: false,
+                                    data: "Invalid Password"
+                                })
+                            }
+                        }
                     });
                 } else {
-                    res.json({
+                    res.status(401).json({
                         type: false,
-                        data: "Incorrect email/password"
+                        data: "User doesn't exist"
                     });
                 }
             }
@@ -41,10 +59,7 @@ exports.login = function(req, res) {
 };
 
 exports.createUser = function (req, res) {
-
-    console.log("In createUser");
     User.findOne({email: req.body.email}, function (err, user) {
-        console.log("In User callback");
         if (err) {
             console.log("Error");
             res.status(501).json({
@@ -53,16 +68,13 @@ exports.createUser = function (req, res) {
             });
         } else {
             if (user) {
-                console.log("User found");
                 res.status(409).json({
                     type: false,
                     data: "User already exists!"
                 });
             } else {
-                console.log("Creating new user");
                 var userModel = new User({
                     email: req.body.email,
-                    password : req.body.password,
                     name: 'Usman Khan',
                     m_id: 123,   /*"00001", mobile login for easier access */
                     m_pin: 1210 ,  /*"1234" mobile "password" pin  */
@@ -75,9 +87,8 @@ exports.createUser = function (req, res) {
                     zip: "60234",/* */
                     role: 1, /* this will be defined in a different table the numer here will go to a specific permission set */
                     co_id: null /* the company they are associated with */
-                    });
-                console.log("Email recvd:" + req.body.email);
-                console.log("Password recvd:" + req.body.password);
+                });
+                console.log("Password recvd while creating user:" + req.body.password);
 
                 userModel.save(function (err, user1) {
                     if(err){
@@ -86,87 +97,28 @@ exports.createUser = function (req, res) {
                             data:err
                         });
                     }else {
-                        console.log("Before generating token");
-                        user1.token = jwt.sign(req.body, "asdasdasdasdasd");
-                        console.log("after generating token");
-
-                        user1.save(function (err, user2) {
-                            console.log("Before deleteing: \n"+  user2);
-                            delete user2.hashed_password;
-                            delete user2.token;
-                            delete user2.v;
-                            console.log("Before deleteing: \n"+ user2);
-                            res.json({
-                                type: true,
-                                data: user2,
-                                token: user1.token
+                        helper.hashPassword(req.body.password, function(hashed_password) {
+                            user1.token = jwt.sign(req.body, "asdasdasdasdasd");
+                            user1.hashed_password= hashed_password;
+                            console.log("Hashed password as I am saving: " + hashed_password);
+                            user1.save(function (err, user2) {
+                                delete user2.hashed_password;
+                                delete user2.token;
+                                delete user2.v;
+                                res.json({
+                                    type: true,
+                                    data: user2,
+                                    token: user1.token
+                                });
                             });
                         });
                     }
                 })
             }
         }
-    });
-}
-/*
+    })
+};
 
-        var password = helper.hashPassword("kashifLatif", function(password){
-        console.log("password: " + password);
-        var arvind = new User({
-            name: 'Usman Khan',
-            email: "usmann@gmail.com",
-            m_id: 123,   */
-/*"00001", mobile login for easier access *//*
-
-            m_pin: 1210 ,  */
-/*"1234" mobile "password" pin  *//*
-
-            f_name: "firstName", */
-/*"johnlouis",*//*
-
-            l_name: "string", */
-/*"griffin"*//*
-
-            address_1: "string", */
-/*"123 fake street", *//*
-
-            address_2: "string", */
-/*"", *//*
-
-            city: "string",   */
-/*"somewhere",*//*
-
-            state: "string",  */
-/* "illinois",*//*
-
-            zip: "60234",*/
-/* *//*
-
-            role: 1, */
-/* this will be defined in a different table the numer here will go to a specific permission set *//*
-
-            co_id: null, */
-/* the company they are associated with *//*
-
-            hashed_password:password
-        });
-
-
-        arvind.save(function (err, data) {
-            if (err){
-                res.render('home/index', {
-                    title: 'User error: ' + err
-                })
-            } else {
-                console.log('Saved ', data );
-                res.render('home/index', {
-                    title: 'User saved'
-                })
-            }
-        });
-
-    });
-*/
 
 exports.createCompany = function(req, res){
     var company = {

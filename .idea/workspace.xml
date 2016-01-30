@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06e29efb-79b2-4eda-8c57-9028bec0e82d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helper_functions/password.js" afterPath="$PROJECT_DIR$/app/helper_functions/password.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home.js" afterPath="$PROJECT_DIR$/app/controllers/home.js" />
     </list>
     <ignored path="node-express-mongoose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="3708">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.9183673" vertical-offset="450" max-vertical-offset="2844">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -60,7 +59,7 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1224">
+            <state vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1224">
               <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -89,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="password.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="password.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helper_functions/password.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6" vertical-offset="27" max-vertical-offset="450">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="450">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -161,11 +160,11 @@
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/models/user.js" />
         <option value="$PROJECT_DIR$/config/token-auth/index.js" />
-        <option value="$PROJECT_DIR$/app/controllers/home.js" />
-        <option value="$PROJECT_DIR$/app/controllers/home.js" />
         <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/app/helper_functions/password.js" />
+        <option value="$PROJECT_DIR$/app/controllers/home.js" />
+        <option value="$PROJECT_DIR$/app/controllers/home.js" />
       </list>
     </option>
   </component>
@@ -346,7 +345,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;home&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;user&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/user.js&#10;hom&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;inde&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/index.js&#10;ho&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;h&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;rout&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;rou&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;route&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;auth&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/authenticate.js&#10;loca&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;pas&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/helper_functions/password.js&#10;local&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/test/test_user.js&#10;compan&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/company.js&#10;pass&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/config/passport.js&#10;User&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js&#10;test_&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;test&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;pac&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/package.json&#10;com&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/company.js&#10;Use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js" />
+    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;user&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/user.js&#10;hom&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;inde&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/index.js&#10;ho&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;h&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/controllers/home.js&#10;rout&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;rou&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;route&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/routes.js&#10;auth&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/token-auth/authenticate.js&#10;loca&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;pas&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/helper_functions/password.js&#10;local&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/config/passport/local.js&#10;use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/test/test_user.js&#10;compan&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/home-healthware/app/models/company.js&#10;pass&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/config/passport.js&#10;User&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js&#10;test_&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;test&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/test/test_company.js&#10;pac&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/package.json&#10;com&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/company.js&#10;Use&#9;FILE&#9;file:///home/usman/Projects/WebstormProjects/node-express-mongoose/app/models/user.js" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.home.js">
@@ -851,10 +850,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="756">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="558">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="972">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -869,10 +876,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="558">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="756">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -885,26 +892,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.js">
+    <entry file="file://$PROJECT_DIR$/app/helper_functions/password.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="972">
-          <caret line="37" column="56" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="450">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="3708">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helper_functions/password.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6" vertical-offset="27" max-vertical-offset="450">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.9183673" vertical-offset="450" max-vertical-offset="2844">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
           <folding />
         </state>
       </provider>
