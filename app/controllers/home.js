@@ -31,13 +31,19 @@ exports.login = function(req, res) {
                         res.status(501).send();
                     }else{
                         if(result) {
+                            user = user.toObject();
+                            token = user.token;
+                            delete user["hashed_password"];
+                            delete user["token"];
+                            delete user["__v"];
+                            delete user["_id"];
                             res.json({
                                 type: true,
                                 data: user,
-                                token: user.token
+                                token: token
                             });
                         }else{
-                            res.status(401).send({
+                            res.status(401).json({
                                 type: false,
                                 data: "Invalid Password"
                             })
@@ -98,9 +104,11 @@ exports.createUser = function (req, res) {
                             user1.hashed_password= hashed_password;
                             console.log("Hashed password as I am saving: " + hashed_password);
                             user1.save(function (err, user2) {
-                                delete user2.hashed_password;
-                                delete user2.token;
-                                delete user2.v;
+                                user2 = user2.toObject();
+                                delete user2["hashed_password"];
+                                delete user2["token"];
+                                delete user2["__v"];
+                                delete user2["_id"];
                                 res.json({
                                     type: true,
                                     data: user2,
