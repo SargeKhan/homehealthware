@@ -11,50 +11,46 @@ var helper = require('../helper_functions/password');
 var jwt = require("jsonwebtoken");
 
 exports.index = function (req, res) {
-  res.render('home/index', {
-    title: 'Node Express Mongoose Boilerplate'
-  });
+    res.render('home/index', {
+        title: 'Node Express Mongoose Boilerplate'
+    });
 };
 exports.login = function(req, res) {
-
     console.log("Password recvd while login user:" + req.body.password);
-    helper.hashPassword(req.body.password, function(hashedPassword){
-        console.log("Hashed password in Login" + hashedPassword);
-        User.findOne({email: req.body.email}, '+hashed_password',function(err, user) {
-            if (err) {
-                res.json({
-                    type: false,
-                    data: "Error occured: " + err
+    User.findOne({email: req.body.email}, '+hashed_password',function(err, user) {
+        if (err) {
+            res.json({
+                type: false,
+                data: "Error occured: " + err
+            });
+        } else {
+            if (user) {
+                bcrypt.compare(req.body.password, user.hashed_password, function(err,result) {
+                    console.log("Bcrypt returns: " + result);
+                    if(err){
+                        res.status(501).send();
+                    }else{
+                        if(result) {
+                            res.json({
+                                type: true,
+                                data: user,
+                                token: user.token
+                            });
+                        }else{
+                            res.status(401).send({
+                                type: false,
+                                data: "Invalid Password"
+                            })
+                        }
+                    }
                 });
             } else {
-                if (user) {
-                    bcrypt.compare(req.body.password, user.hashed_password, function(err,result) {
-                        console.log("Bycrpt returns: " + result);
-                        if(err){
-                            res.status(501).send();
-                        }else{
-                            if(result) {
-                                res.json({
-                                    type: true,
-                                    data: user,
-                                    token: user.token
-                                });
-                            }else{
-                                res.status(401).send({
-                                    type: false,
-                                    data: "Invalid Password"
-                                })
-                            }
-                        }
-                    });
-                } else {
-                    res.status(401).json({
-                        type: false,
-                        data: "User doesn't exist"
-                    });
-                }
+                res.status(401).json({
+                    type: false,
+                    data: "User doesn't exist"
+                });
             }
-        });
+        }
     });
 };
 
