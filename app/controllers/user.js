@@ -27,18 +27,20 @@ exports.login = function(req, res) {
                         res.status(501).send();
                     }else{
                         if(result) {
-                            user = user.toObject();
-                            var token = user.token;
-                            delete user["hashed_password"];
-                            delete user["token"];
-                            delete user["__v"];
-                            delete user["_id"];
+                            console.log(user)
                             res.json({
                                 type: true,
-                                data: user,
-                                token: token
+                                data: {token: user.token}
                             });
-                        }else{
+
+                            /*                            var token = user.token;
+                                                        delete user["hashed_password"];
+                                                        delete user["token"];
+                                                        delete user["__v"];
+                                                        delete user["_id"];
+
+                            */                       }else{
+
                             res.status(401).json({
                                 type: false,
                                 data: "Invalid Password"

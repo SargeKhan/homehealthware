@@ -5,7 +5,7 @@
 var mongoose = require('mongoose');
 var userPlugin = require('mongoose-user');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt');
+
 /**
  * User schema
  */
@@ -24,8 +24,8 @@ var UserSchema = new Schema({
   zip: {type: Number, null: false },    /*"60234",*/
   role: {type: Number, null: false}, /* this will be defined in a different table the numer here will go to a specific permission set */
   co_id: {type: Schema.Types.ObjectId, null:true}, /* the company they are associated with */
-  token: {type:String, null: false, select: false},
-  hashed_password: { type: Schema.Types.Mixed, null:false, trim:false, select: false}
+  token: {type:String, null: false, select: true},
+  hashed_password: {type: Schema.Types.Mixed, null:false, trim:false, select: false}
 });
 
 /**

@@ -19,7 +19,7 @@ module.exports = function (app) {
   app.get('/company/:id', authenticate.ensureAuthentication, company.getCompany);
   app.post('/createCompany', authenticate.ensureAuthentication, authenticate.isPermitted, company.createCompany);
   app.post('/login', user.login);
-  app.get('/requiresAuthenticaton', authenticate.ensureAuthentication, home.authenticateView)
+  app.get('/requiresAuthentication', authenticate.ensureAuthentication, home.authenticateView)
 
   /**
    * Error handling
