@@ -4,21 +4,23 @@
  */
 
 var home = require('../app/controllers/home');
-var authenticate = require('./token-auth/index')
+var authenticate = require('./token-auth/index');
+var user = require('../app/controllers/user.js');
+var company = require('../app/controllers/company.js');
+
 
 /**
  * Expose
  */
 
 module.exports = function (app) {
+
   app.get('/', home.index);
-  app.get('/success', home.index);
-  app.get('/failure', home.index);
-  app.post('/createUser', home.createUser);
-  app.get('/createCompany',home.createCompany);
-  app.post('/login', home.login);
+  app.post('/createUser', user.createUser);
+  app.get('/company/:id', authenticate.ensureAuthentication, company.getCompany);
+  app.post('/createCompany', authenticate.ensureAuthentication, authenticate.isPermitted, company.createCompany);
+  app.post('/login', user.login);
   app.get('/requiresAuthenticaton', authenticate.ensureAuthentication, home.authenticateView)
-  app.get('/authenticated', authenticate.ensureAuthentication, home.authenticateView)
 
   /**
    * Error handling

@@ -41,3 +41,11 @@ exports.ensureAuthentication = function(req, res, next){
         }
     });
 };
+
+exports.isPermitted = function(req, res, next){
+    if(req.user.role == 1) next();
+    else res.status(403).json({
+        type: false,
+        data: "User is forbidden to make take this action"
+    });
+};
