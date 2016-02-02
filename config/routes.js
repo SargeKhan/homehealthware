@@ -12,7 +12,6 @@ var company = require('../app/controllers/company.js');
 /**
  * Expose
  */
-
 module.exports = function (app) {
 
   app.get('/', home.index);

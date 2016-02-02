@@ -34,3 +34,18 @@ exports.createCompany = function(req, res){
     });
 };
 
+exports.getCompany = function(req, res){
+    var id = req.params.id;
+    Company.findOne({id: id}, function(err, result){
+        if(err) {
+            res.status(501).json({
+            type: false,
+            data: err });
+        }else {
+            res.status(200).json({
+                type: true,
+                data: result
+            });
+        }
+    });
+};
