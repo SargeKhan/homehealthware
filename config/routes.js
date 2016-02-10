@@ -7,6 +7,7 @@ var home = require('../app/controllers/home');
 var authenticate = require('./token-auth/index');
 var user = require('../app/controllers/user.js');
 var company = require('../app/controllers/company.js');
+var crypto = require('crypto')
 
 
 /**
@@ -19,7 +20,9 @@ module.exports = function (app) {
   app.get('/company/:id', authenticate.ensureAuthentication, company.getCompany);
   app.post('/createCompany', authenticate.ensureAuthentication, authenticate.isPermitted, company.createCompany);
   app.post('/login', user.login);
-  app.get('/requiresAuthentication', authenticate.ensureAuthentication, home.authenticateView)
+  app.get('/requiresAuthentication', authenticate.ensureAuthentication, home.authenticateView);
+  app.post('/changePassword', user.changePassword);
+  app.post('/reset/:token', user.reset);
 
   /**
    * Error handling
