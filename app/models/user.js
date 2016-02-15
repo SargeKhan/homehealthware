@@ -6,6 +6,8 @@ var mongoose = require('mongoose');
 var userPlugin = require('mongoose-user');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+// npm install git://github.com/RGBboy/mongoose-validate.git
+var validate = require('mongoose-validate')
 
 /**
  * User schema
@@ -13,7 +15,7 @@ var crypto = require('crypto');
 
 var UserSchema = new Schema({
   name: { type: String, default: '' },
-  email: { type: String, unique: true, null: false },
+  email: { type: String, unique: true, null: false, validate: [validate.email, 'invalid email address'] },
   m_id: {type: Number, null: false },   /*"00001", mobile login for easier access */
   m_pin: {type: Number, null: false } ,  /*"1234" mobile "password" pin  */
   f_name: { type: String, null: false}, /*"johnlouis",*/
