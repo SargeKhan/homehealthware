@@ -61,6 +61,8 @@ exports.login = function(req, res) {
 };
 
 exports.createUser = function (req, res) {
+    console.log(req.body.email)
+    console.log(req.body.password)
     User.findOne({email: req.body.email}, function (err, user) {
         if (err) {
             console.log("Error");
