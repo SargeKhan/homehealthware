@@ -1,5 +1,4 @@
 /**
- *
  * Created by usman on 1/30/16.
  */
 
@@ -78,17 +77,17 @@ exports.createUser = function (req, res) {
             } else {
                 var userModel = new User({
                     email: req.body.email,
-                    name: 'Usman Khan',
-                    m_id: 123,   /*"00001", mobile login for easier access */
-                    m_pin: 1210 ,  /*"1234" mobile "password" pin  */
-                    f_name: "firstName", /*"johnlouis",*/
-                    l_name: "string", /*"griffin"*/
-                    address_1: "string", /*"123 fake street", */
-                    address_2: "string", /*"", */
-                    city: "string",   /*"somewhere",*/
-                    state: "string",  /* "illinois",*/
-                    zip: "60234",/* */
-                    role: 1, /* this will be defined in a different table the numer here will go to a specific permission set */
+                    name: req.body.name,
+                    m_id: req.body.m_id,   /*"00001", mobile login for easier access */
+                    m_pin: req.body.m_pin,  /*"1234" mobile "password" pin  */
+                    f_name: req.body.firstname, /*"johnlouis",*/
+                    l_name: req.body.lastname, /*"griffin"*/
+                    address_1: req.body.address1, /*"123 fake street", */
+                    address_2: req.body.address2, /*"", */
+                    city: req.body.city,   /*"somewhere",*/
+                    state: req.body.state,  /* "illinois",*/
+                    zip: req.body.zip,/* */
+                    role: req.body.role, /* this will be defined in a different table the numer here will go to a specific permission set */
                     co_id: null /* the company they are associated with */
                 });
                 console.log("Password recvd while creating user:" + req.body.password);
@@ -149,15 +148,7 @@ exports.changePassword = function(req, res, next) {
             });
         },
         function(token, user, done) {
-/*            var smtpConfig = {
-                host: 'securesmtp.siteprotect.com',
-                port: 587,
-                secure: true, // use SSL
-                auth: {
-                    user: 'contactform@bsicom.com',
-                    pass: 'h48xEPr5.z'
-                }
-            };*/
+
             var smtpTransport = nodemailer.createTransport('smtps://usmankhen@gmail.com:Forgot your@smtp.gmail.com');
             var mailOptions = {
                 to: 'usmanokhan@hotmail.com',
@@ -203,7 +194,7 @@ exports.reset = function(req, res) {
             });
         },
         function(user, done) {
-            var smtpTransport = nodemailer.createTransport('smtps://usmankhen@gmail.com:Forgot your@smtp.gmail.com');
+            var smtpTransport = nodemailer.createTransport('smtps://usmankhen@gmail.com:*****@smtp.gmail.com');
             var mailOptions = {
                 to: 'usmanokhan@hotmail.com',
                 from: 'usmanken@gmail.com',
@@ -226,4 +217,3 @@ exports.reset = function(req, res) {
         }
     });
 };
-
