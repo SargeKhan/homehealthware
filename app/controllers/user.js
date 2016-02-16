@@ -70,6 +70,7 @@ exports.createUser = function (req, res) {
             });
         } else {
             if (user) {
+                console.log(user);
                 res.status(409).json({
                     type: false,
                     data: "User already exists!"

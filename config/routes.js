@@ -15,7 +15,6 @@ var crypto = require('crypto')
  */
 module.exports = function (app) {
 
-  app.get('/', home.index);
   app.post('/createUser', user.createUser);
   app.get('/company/:id', authenticate.ensureAuthentication, company.getCompany);
   app.post('/createCompany', authenticate.ensureAuthentication, authenticate.isPermitted, company.createCompany);
