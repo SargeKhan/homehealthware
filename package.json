@@ -35,7 +35,9 @@
     "swig": "1.4.2",
     "view-helpers": "0.1.5",
     "winston": "1.0.1",
-    "nodemailer": "2.1.0"
+    "nodemailer": "2.1.0",
+    "cors":"2.7.1",
+    "bcrypt":"*"
   },
   "devDependencies": {
     "nodemon": "latest",
