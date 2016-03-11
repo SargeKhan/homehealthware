@@ -3,7 +3,6 @@
  */
 
 var mongoose = require('mongoose');
-var userPlugin = require('mongoose-user');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
 // npm install git://github.com/RGBboy/mongoose-validate.git
@@ -24,7 +23,7 @@ var UserSchema = new Schema({
   address_2: { type: String, default: ''}, /*"", */
   city: { type: String, null: false},   /*"somewhere",*/
   state: { type: String, null: false},  /* "illinois",*/
-  zip: {type: Number, null: false },    /*"60234",*/
+  zip: { type: Number, null: false },    /*"60234",*/
   role: {type: Number, null: false}, /* this will be defined in a different table the numer here will go to a specific permission set */
   co_id: {type: Schema.Types.ObjectId, null:true}, /* the company they are associated with */
   token: {type:String, null: false, select: true},
@@ -37,11 +36,6 @@ var UserSchema = new Schema({
  * hook a pre save method to hash the password
  */
 
-/**
- * user plugin
- */
-
-UserSchema.plugin(userPlugin, {});
 
 /**
  * methods
