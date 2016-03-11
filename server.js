@@ -9,8 +9,7 @@ var mongoose = require('mongoose');
 var config = require('./config/config')
 
 var app = express();
-var port = process.env.PORT || 3000;
-
+var port = process.env.PORT || 9561;
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };

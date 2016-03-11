@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  db: 'mongodb://localhost/homehealthware-dev',
+  db: 'mongodb://localhost/homehealthware-dev-db',
   facebook: {
     clientID: 'APP_ID',
     clientSecret: 'SECRET',
