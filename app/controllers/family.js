@@ -30,7 +30,6 @@ exports.create = function(req, res){
                 if (err)
                   res.status(400).json({type: false, err: err});
                 else {
-                  console.log(result);
                   res.status(200).json({type: true, result: result});
                 }
               });
