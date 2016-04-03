@@ -6,6 +6,8 @@
 var home = require('../app/controllers/home');
 var authenticate = require('./token-auth/index');
 var user = require('../app/controllers/user.js');
+var client = require('../app/controllers/client.js');
+var family = require('../app/controllers/family.js');
 var company = require('../app/controllers/company.js');
 var crypto = require('crypto')
 
@@ -15,14 +17,31 @@ var crypto = require('crypto')
  */
 module.exports = function (app) {
 
-  app.post('/createUser', user.createUser);
-  app.get('/company/:id', authenticate.ensureAuthentication, company.getCompany);
+  app.get('/company/:id', company.getCompany);
   app.post('/createCompany', authenticate.ensureAuthentication, authenticate.isPermitted, company.createCompany);
-  app.post('/login', user.login);
   app.get('/requiresAuthentication', authenticate.ensureAuthentication, home.authenticateView);
+  //  User routes
+  app.post('/user', user.create);
+  app.post('/login', user.login);
   app.post('/changePassword', user.changePassword);
   app.post('/reset/:token', user.reset);
+  app.put('/user/:id', user.update);
+  app.get('/user', user.find);
+  app.get('/user/:id', user.findOne);
+  //  User routes
 
+  //  client routes
+  app.post('/client', client.create);
+  app.put('/client/:id', client.update);
+  app.get('/client', client.find);
+  app.get('/client/:id', client.findOne);
+  //  client routes
+  // family
+  app.post('/client/:id/family', family.create);
+  app.put('/client/:id/family/:f_id', family.update);
+  app.get('/client/:id/family', family.find);
+  app.get('/client/:id/family/:f_id', family.findOne);
+  // family
   /**
    * Error handling
    */

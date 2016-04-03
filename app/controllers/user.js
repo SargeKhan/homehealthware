@@ -7,11 +7,82 @@ var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Family = mongoose.model('family');
 var helper = require('../helper_functions/password');
 var nodemailer = require('nodemailer');
 var async = require('async');
 var crypto = require('crypto');
 
+exports.find = function(req, res){
+    User.find({},{token:0,__v:0}, function(err, users){
+        if(err) { res.status(400).send({err: err })}
+        else{
+          res.send({type: true, result: users});
+        }
+    });
+};
+exports.findOne = function(req, res){
+    User.findById(req.params.id,{token:0,__v:0}).populate('family').exec(function(err, user){
+        if(err) { res.status(400).send({err: err })}
+        else{
+          res.send({type: true, result: user});
+        }
+    });
+};
+
+function saveAll( docs,callback ){
+  var count = 0;
+  var arr = []
+  docs.forEach(function(doc){
+    if(!doc._id){
+      var family = new Family(doc);
+      family.save(function(err,result){
+        if(err)
+          callback(err);
+        else{
+          count++;
+          arr.push(result._id);
+          if( count == docs.length ){
+             callback(null,arr);
+          }
+        }
+      });
+    }
+    else{
+      // var family = new Family(doc);
+      arr.push(doc._id);
+      Family.update({_id: doc._id}, {$set: doc},function(err,result){
+        if(err)
+          callback(err);
+        else{
+          count++;
+          console.log(result);
+          if( count == docs.length ){
+             callback(null,arr);
+          }
+        }
+      });
+    }
+  });
+}
+exports.update = function(req, res){
+    var id= req.params.id;
+    var updatePairs= req.body;
+    saveAll(updatePairs.family,function(err,array){       // save all family members
+      if(err)
+        res.status(400).send({type: false, err: err})
+      else{
+        console.log(array);
+        updatePairs.family = array;   // family ObjectId array
+        User.findOneAndUpdate({ _id: id}, {$set: updatePairs,token:0,__v:0}).populate('family').exec( function(err, result){
+            if(err) { res.status(400).send({ type: false, err: err}) }
+            else{
+              res.send({type: true, result: result});
+            }
+        });
+      }
+    });
+};
 
 exports.login = function(req, res) {
     console.log("Password recvd while login user:" + req.body.password);
@@ -23,6 +94,7 @@ exports.login = function(req, res) {
             });
         } else {
             if (user) {
+              console.log(user);
                 bcrypt.compare(req.body.password, user.hashed_password, function(err,result) {
                     console.log("Bcrypt returns: " + result);
                     if(err){
@@ -34,14 +106,7 @@ exports.login = function(req, res) {
                                 type: true,
                                 data: {token: user.token}
                             });
-
-                            /*                            var token = user.token;
-                                                        delete user["hashed_password"];
-                                                        delete user["token"];
-                                                        delete user["__v"];
-                                                        delete user["_id"];
-
-                            */                       }else{
+                        }else{
 
                             res.status(401).json({
                                 type: false,
@@ -60,7 +125,8 @@ exports.login = function(req, res) {
     });
 };
 
-exports.createUser = function (req, res) {
+exports.create = function (req, res) {
+  var updatePairs = req.body;
     User.findOne({email: req.body.email}, function (err, user) {
         if (err) {
             console.log("Error");
@@ -71,54 +137,48 @@ exports.createUser = function (req, res) {
         } else {
             if (user) {
                 console.log(user);
-                res.status(409).json({
+                res.status(400).json({
                     type: false,
                     data: "User already exists!"
                 });
             } else {
-                var userModel = new User({
-                    email: req.body.email,
-                    name: req.body.name,
-                    m_id: req.body.m_id,   /*"00001", mobile login for easier access */
-                    m_pin: req.body.m_pin,  /*"1234" mobile "password" pin  */
-                    f_name: req.body.firstname, /*"johnlouis",*/
-                    l_name: req.body.lastname, /*"griffin"*/
-                    address_1: req.body.address1, /*"123 fake street", */
-                    address_2: req.body.address2, /*"", */
-                    city: req.body.city,   /*"somewhere",*/
-                    state: req.body.state,  /* "illinois",*/
-                    zip: req.body.zip,/* */
-                    role: req.body.role, /* this will be defined in a different table the numer here will go to a specific permission set */
-                    co_id: null /* the company they are associated with */
-                });
-                console.log("Password recvd while creating user:" + req.body.password);
+              saveAll(updatePairs.family,function(err,array){       // save all family members
+                if(err)
+                  res.status(400).send({type: false, err: err})
+                else{
+                  console.log(array);
+                  updatePairs.family = array;   // family ObjectId array
+                  var userModel = new User(updatePairs);
 
-                userModel.save(function (err, user1) {
-                    if(err){
-                        res.status(409).send({
-                            type: false,
-                            data:err
-                        });
-                    }else {
-                        helper.hashPassword(req.body.password, function(hashed_password) {
-                            user1.token = jwt.sign(req.body, "asdasdasdasdasd");
-                            user1.hashed_password= hashed_password;
-                            console.log("Hashed password as I am saving: " + hashed_password);
-                            user1.save(function (err, user2) {
-                                user2 = user2.toObject();
-                                delete user2["hashed_password"];
-                                delete user2["token"];
-                                delete user2["__v"];
-                                delete user2["_id"];
-                                res.json({
-                                    type: true,
-                                    data: user2,
-                                    token: user1.token
-                                });
-                            });
-                        });
-                    }
-                })
+                  console.log("Password recvd while creating user:" + req.body.password);
+                  userModel.save(function (err, user1) {
+                      if(err){
+                          res.status(400).send({
+                              type: false,
+                              data:err
+                          });
+                      }else {
+                          helper.hashPassword(req.body.password, function(hashed_password) {
+                              user1.token = jwt.sign(req.body, "asdasdasdasdasd");
+                              user1.hashed_password= hashed_password;
+                              console.log("Hashed password as I am saving: " + hashed_password);
+                              user1.save(function (err, user2) {
+                                  user2 = user2.toObject();
+                                  delete user2["hashed_password"];
+                                  delete user2["token"];
+                                  delete user2["__v"];
+                                  delete user2["_id"];
+                                  res.json({
+                                      type: true,
+                                      result: user2,
+                                      token: user1.token
+                                  });
+                              });
+                          });
+                      }
+                  });   // usermodel save
+                }
+              });       // saveAll
             }
         }
     })

@@ -10,21 +10,21 @@ var validate = require('mongoose-validate');
 
 var Family = new Schema({
 
-    f_name: { type: String },
-    l_name: { type: String },
-    address_street: { type: String },
-    address_street2: { type: String },
-    address_city: { type: String },
-    address_state: { type: String },
-    relationship: { type: String },
-    company: { type: String },
-    department: { type: String },
-    workphone: { type: String },
-    homephone: { type: String },
-    cellphone: { type: String },
-    email: { type: String, unique: true, null: true, validate: [validate.email, 'invalid email address'] },
-    notes: { type: String },
-    patid: {type: Schema.Types.ObjectId, null:true},
+    fam_fname: { type: String, required: true },
+    fam_lname: { type: String, required: true },
+    fam_address_street: { type: String, required: true },
+    fam_address_street2: { type: String, required: true },
+    fam_address_city: { type: String, required: true },
+    fam_address_state: { type: String, required: true },
+    fam_relationship: { type: String, required: true },
+    fam_company: { type: String, required: true },
+    fam_department: { type: String, required: true },
+    fam_workphone: { type: String, required: true },
+    fam_homephone: { type: String, required: true },
+    fam_cellphone: { type: String, required: true },
+    fam_email: { type: String, required: true, null: true, validate: [validate.email, 'invalid email address'] },
+    fam_notes: { type: String, required: true },
+    parent_id: {type: Schema.Types.ObjectId, ref: 'Client'},
     co_id: {type: Schema.Types.ObjectId, null:true} /* the company they are associated with */
 
 });

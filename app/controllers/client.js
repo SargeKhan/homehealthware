@@ -6,16 +6,24 @@
 var mongoose = require('mongoose');
 var Client = mongoose.model('Client');
 
-exports.getClient = function(req, res){
-    Client.findById(req.params.id, function(err, client){
+exports.find = function(req, res){
+    Client.find({}, function(err, clients){
         if(err) { res.status(400).send({err: err })}
         else{
-            res.send(client);
+            res.send({type: true, result: clients});
+        }
+    });
+};
+exports.findOne = function(req, res){
+    Client.findById(req.params.id).populate('family').exec(function(err, client){
+        if(err) { res.status(400).send({err: err })}
+        else{
+            res.send({type: true, result: client});
         }
     });
 };
 
-exports.updateClient = function(req, res){
+exports.update = function(req, res){
     var id= req.params.id;
     var updatePairs= req.body;
     Client.update({ _id: id}, {$set: updatePairs}, {}, function(err, result){
@@ -36,12 +44,13 @@ exports.removeClient = function(req, res){
     });
 };
 
-exports.createClient = function(req, res){
+exports.create = function(req, res){
     var clientJson = req.body;
     var client = new Client(clientJson);
     client.save(function(err, result){
-        if(err) { res.status(400).send({type: false,err: err}) }
+        if(err) { console.log(err); res.status(400).send({type: false,err: err}) }
         else{
+          console.log(result);
             res.send({type: true, result:result})
         }
     });
